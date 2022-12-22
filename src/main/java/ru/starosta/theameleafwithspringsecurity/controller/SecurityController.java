@@ -1,5 +1,6 @@
 package ru.starosta.theameleafwithspringsecurity.controller;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,6 +13,7 @@ import ru.starosta.theameleafwithspringsecurity.service.UserServiceImpl;
 import java.util.List;
 import javax.validation.Valid;
 
+@Controller
 public class SecurityController {
     private UserService userService;
 
@@ -52,7 +54,7 @@ public class SecurityController {
         }
 
         userService.saveUser(userDto);
-        return "redirect:/register?success";
+        return "redirect:/index?success";
     }
 
     @GetMapping("/users")
